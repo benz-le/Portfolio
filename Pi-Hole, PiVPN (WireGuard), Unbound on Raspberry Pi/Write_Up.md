@@ -21,6 +21,7 @@ Materials required:
   - Set locale settings for your time zone and keyboard layout.
 - Click “Write” and insert the microSD card into your Raspberry Pi.
 - Power on the Raspberry Pi to boot it up.
+![Raspberry Pi Imager](https://github.com/benz-le/Portfolio/blob/main/Pi-Hole%2C%20PiVPN%20(WireGuard)%2C%20Unbound%20on%20Raspberry%20Pi/images/imager.png)
 ## Step 2: Use Terminal or PuTTY to SSH into the Pi 
 - Open Command Prompt on Windows and run:
 ```
@@ -29,6 +30,7 @@ ssh pi@192.168.1.195
 - Or use PuTTY:
   - Enter the IP address in the "Host Name" field.
   - Click "Open".
+![PuTTY SSH](https://github.com/benz-le/Portfolio/blob/main/Pi-Hole%2C%20PiVPN%20(WireGuard)%2C%20Unbound%20on%20Raspberry%20Pi/images/putty.png)
 ## Step 3: Update Raspberry Pi OS and Packages
 - Run the following command to update all installed packages:
 ```
@@ -39,6 +41,7 @@ sudo apt update && sudo apt upgrade -y
 - Access your router's DHCP lease table or network map (e.g., on a Linksys router).
 - Look for the Pi’s hostname (e.g., `pihole`) to see its assigned IP address.
 - Reserve this IP address for the Raspberry Pi’s MAC address (e.g., `192.168.1.195` for `pihole`).
+![DHCP Reservation on LinkSys Router](https://github.com/benz-le/Portfolio/blob/main/Pi-Hole%2C%20PiVPN%20(WireGuard)%2C%20Unbound%20on%20Raspberry%20Pi/images/dhcp_reservation.png)
 ## Step 4b: Set a Static IP Directly on the Pi
 - If you can’t determine the Pi’s IP via the router:
   - Connect a monitor and keyboard directly to the Pi.
@@ -59,6 +62,7 @@ sudo nmtui
 ```
 sudo reboot
 ```
+![Setting Static IP on Pi using nmtui](https://github.com/benz-le/Portfolio/blob/main/Pi-Hole%2C%20PiVPN%20(WireGuard)%2C%20Unbound%20on%20Raspberry%20Pi/images/staticip.png)
 # Install PiHole
 ## Step 5: Run the Installation Script
 ```
@@ -81,6 +85,7 @@ pihole setpassword `yourpassword`
 HTTP://192.168.1.195/admin
 ```
 - Log in using the password you just created.
+![Pi-Hole Admin Interface](https://github.com/benz-le/Portfolio/blob/main/Pi-Hole%2C%20PiVPN%20(WireGuard)%2C%20Unbound%20on%20Raspberry%20Pi/images/pihole_interface.png)
 # Install Unbound
 ## Step 8: Install Unbound
 ```
@@ -184,6 +189,7 @@ dig pi-hole.net @127.0.0.1 -p 5335
 ```
 127.0.0.1#5335
 ```
+![Set Unbound DNS Server as Upstream](https://github.com/benz-le/Portfolio/blob/main/Pi-Hole%2C%20PiVPN%20(WireGuard)%2C%20Unbound%20on%20Raspberry%20Pi/images/unbound.png)
 # Install PiVPN with WireGuard
 ## Step 11: Run the PiVPN Installation Script
 ```
@@ -192,15 +198,22 @@ curl -L https://install.pivpn.io | bash
 ## Step 12: Configure via Installation Wizard
 - Proceed carefully through the wizard:
 - On the “DHCP Reservation” screen, press → then ENTER (No: Setup static IP address).
+![DHCP Reservation Screen](https://github.com/benz-le/Portfolio/blob/main/Pi-Hole%2C%20PiVPN%20(WireGuard)%2C%20Unbound%20on%20Raspberry%20Pi/images/dhcpsetting.png)
 - On the “Static IP Address” screen, confirm the settings are correct, then press ENTER (Yes).
 - On the “Choose a user” screen, select the default user (typically pi).
+![Choose a user Screen](https://github.com/benz-le/Portfolio/blob/main/Pi-Hole%2C%20PiVPN%20(WireGuard)%2C%20Unbound%20on%20Raspberry%20Pi/images/user.png)
 - On the “Installation mode” screen, choose “WireGuard” as our VPN, and press ENTER (WireGuard).
+![Installation Mode Screen](https://github.com/benz-le/Portfolio/blob/main/Pi-Hole%2C%20PiVPN%20(WireGuard)%2C%20Unbound%20on%20Raspberry%20Pi/images/vpnoptions.png)
 - The default WireGuard port should be `51820`.
+![Port Screen](https://github.com/benz-le/Portfolio/blob/main/Pi-Hole%2C%20PiVPN%20(WireGuard)%2C%20Unbound%20on%20Raspberry%20Pi/images/port.png)
 - If Pi-hole is detected, that’s expected and correct.
+![Pi-Hole Detected Screen](https://github.com/benz-le/Portfolio/blob/main/Pi-Hole%2C%20PiVPN%20(WireGuard)%2C%20Unbound%20on%20Raspberry%20Pi/images/piholedetected.png)
 - On the “Public IP or DNS” screen:
   - If you plan to use Dynamic DNS, select that option by pressing ↓, then SPACE, and ENTER (DNS Entry - Use a public DNS).
     - Enter your public DNS domain. I will include instructions for creating a DNS hostname and DDNS key for your Dynamic DNS/home network using `noip.com` [here](https://github.com/Nova281/pihole-pivpn-unbound-raspberrypi-server?tab=readme-ov-file#set-up-a-domain-name-for-router-optional).
   - Otherwise, choose to use your public IP address.
+![Public IP or DNS Screen](https://github.com/benz-le/Portfolio/blob/main/Pi-Hole%2C%20PiVPN%20(WireGuard)%2C%20Unbound%20on%20Raspberry%20Pi/images/publicdns.png)
+![DDNS Hostname Screen](https://github.com/benz-le/Portfolio/blob/main/Pi-Hole%2C%20PiVPN%20(WireGuard)%2C%20Unbound%20on%20Raspberry%20Pi/images/enterddns.png)
 - For “Unattended Upgrades,” press ENTER (Yes).
 ## Step 13: Set Port Forwarding for PiVPN
 - Log in to your router and access the Port Forwarding settings.
@@ -210,30 +223,38 @@ curl -L https://install.pivpn.io | bash
   - Internal Port: `51820`
   - Protocol: `UDP`
   - Internal IP: Your Pi’s static IP (e.g., `192.168.1.195`)
+![Port Forwarding Setting on Router](https://github.com/benz-le/Portfolio/blob/main/Pi-Hole%2C%20PiVPN%20(WireGuard)%2C%20Unbound%20on%20Raspberry%20Pi/images/portforwarding.png)
 ## Step 14: Add a VPN Client
 - Run the following command to create a new client profile:
 ```
 pivpn -a
 ```
 - Name the client (e.g., `{username-device}` like `ble-pc`).
+![Add Client to PiVPN](https://github.com/benz-le/Portfolio/blob/main/Pi-Hole%2C%20PiVPN%20(WireGuard)%2C%20Unbound%20on%20Raspberry%20Pi/images/addclient.png)
 - Transfer the config file to your client machine using Secure Copy (SCP). On Windows, you can use `pscp`:
 ```
 pscp -P 22 pi@192.168.1.195:/home/pi/configs/{username-device}.conf {username-device}.conf
 ```
-  - Replace placeholders accordingly and enter your Pi password when prompted.
+- Replace placeholders accordingly and enter your Pi password when prompted.
+![Secure Copy to Windows](https://github.com/benz-le/Portfolio/blob/main/Pi-Hole%2C%20PiVPN%20(WireGuard)%2C%20Unbound%20on%20Raspberry%20Pi/images/pscp.png)
+![Conf file on Windows](https://github.com/benz-le/Portfolio/blob/main/Pi-Hole%2C%20PiVPN%20(WireGuard)%2C%20Unbound%20on%20Raspberry%20Pi/images/conffile.png)
 - To add a mobile device, you can use a QR code instead:
 ```
 pivpn -qr
 ```
+![QR Code Example](https://github.com/benz-le/Portfolio/blob/main/Pi-Hole%2C%20PiVPN%20(WireGuard)%2C%20Unbound%20on%20Raspberry%20Pi/images/qrcode.png)
 ## Step 15: Set Up WireGuard Tunnel
 - On Windows: Open WireGuard, click “Add Tunnel,” and select the `.conf` file you transferred.
 - On Mobile: Tap “+” and choose “Create from QR code,” then scan the generated QR code.
 - Once the tunnel is activated, your device will route DNS traffic securely through Pi-hole, even outside your home network.
-
+![WireGuard Client on Windows](https://github.com/benz-le/Portfolio/blob/main/Pi-Hole%2C%20PiVPN%20(WireGuard)%2C%20Unbound%20on%20Raspberry%20Pi/images/wireguard.png)
+![Pi-Hole Detects VPN Client outside of Network](https://github.com/benz-le/Portfolio/blob/main/Pi-Hole%2C%20PiVPN%20(WireGuard)%2C%20Unbound%20on%20Raspberry%20Pi/images/wireguardconnection.png)
 # Set Up a Domain Name for Router (Optional)
 - Register with a Dynamic DNS provider like `noip.com`.
 - Create a free hostname. Note: Free hostnames must be confirmed every 30 days to avoid deletion.
+![Hostname Homepage](https://github.com/benz-le/Portfolio/blob/main/Pi-Hole%2C%20PiVPN%20(WireGuard)%2C%20Unbound%20on%20Raspberry%20Pi/images/ddnshostname.png)
 - Generate a DDNS key (includes username, password, and domain).
+![DDNS Screen on noip.com](https://github.com/benz-le/Portfolio/blob/main/Pi-Hole%2C%20PiVPN%20(WireGuard)%2C%20Unbound%20on%20Raspberry%20Pi/images/ddns.png)
 - Log in to your router and navigate to DDNS settings:
   - Select provider: No-IP
   - Enter the credentials provided:
@@ -247,6 +268,7 @@ Server/Server Address: dynupdate.no-ip.com
   - Not every device will ask you for a server or server address. The service still works without issue if the device does not request it.
 - Click “Update” and verify that the status shows as “Success.”
 - Test the new domain in a browser; your router’s login page should appear.
+![Router DDNS Setting](https://github.com/benz-le/Portfolio/blob/main/Pi-Hole%2C%20PiVPN%20(WireGuard)%2C%20Unbound%20on%20Raspberry%20Pi/images/routerddns.png)
 # Notes
 - The Pi-hole dashboard is accessible from both LAN and VPN.
 - Be mindful of periodic No-IP hostname verification if using their free service.
