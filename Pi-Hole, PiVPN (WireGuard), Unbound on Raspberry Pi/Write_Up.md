@@ -20,7 +20,7 @@ Materials required:
   - Set the username and password for future logins.
   - Set locale settings for your time zone and keyboard layout.
 - Click “Write” and insert the microSD card into your Raspberry Pi.
-- Power on the Raspberry Pi to boot it up.
+- Power on the Raspberry Pi to boot it up.\
 ![Raspberry Pi Imager](https://github.com/benz-le/Portfolio/blob/main/Pi-Hole%2C%20PiVPN%20(WireGuard)%2C%20Unbound%20on%20Raspberry%20Pi/images/imager.png)
 ## Step 2: Use Terminal or PuTTY to SSH into the Pi 
 - Open Command Prompt on Windows and run:
@@ -29,7 +29,7 @@ ssh pi@192.168.1.195
 ```
 - Or use PuTTY:
   - Enter the IP address in the "Host Name" field.
-  - Click "Open".
+  - Click "Open".\
 ![PuTTY SSH](https://github.com/benz-le/Portfolio/blob/main/Pi-Hole%2C%20PiVPN%20(WireGuard)%2C%20Unbound%20on%20Raspberry%20Pi/images/putty.png)
 ## Step 3: Update Raspberry Pi OS and Packages
 - Run the following command to update all installed packages:
