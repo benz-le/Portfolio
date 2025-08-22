@@ -57,8 +57,8 @@ These are my notes for creating a phishing campaign using **GoPhish**, hosted on
    wget <link>
    unzip <file>.zip
    ```  
-![wget](https://github.com/benz-le/Portfolio/blob/main/GoPhish%20Phishing%20Campaign%20with%20Linode%20and%20MailHog/images/wget%20GoPhish.png)
-![unzip](https://github.com/benz-le/Portfolio/blob/main/GoPhish%20Phishing%20Campaign%20with%20Linode%20and%20MailHog/images/unzip.png)
+   ![wget](https://github.com/benz-le/Portfolio/blob/main/GoPhish%20Phishing%20Campaign%20with%20Linode%20and%20MailHog/images/wget%20GoPhish.png)
+   ![unzip](https://github.com/benz-le/Portfolio/blob/main/GoPhish%20Phishing%20Campaign%20with%20Linode%20and%20MailHog/images/unzip.png)
 
 
 ### Step 4: Configure GoPhish
