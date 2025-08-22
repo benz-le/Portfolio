@@ -185,19 +185,19 @@ sudo ./gophish
    ```
    https://<ip-address>:<port>
    ```  
-3. In **Sending Profiles**, set SMTP From (e.g., `benz <support@wordpress.com>`).  
+3. In **Sending Profiles**, set **SMTP From** (e.g., `benz <support@wordpress.com>`).  
 4. Use the MailHog SMTP server:  
    ```
    <ip-address>:1025
    ```  
 5. Save the profile.
 ![Spoofed Sending Profile](https://github.com/benz-le/Portfolio/blob/main/GoPhish%20Phishing%20Campaign%20with%20Linode%20and%20MailHog/images/spoofed%20sending%20profile.png)
-6. In **Email Templates**, set Envelope Sender (e.g., `<support@wordpress.com>`).    
+6. In **Email Templates**, set **Envelope Sender** (e.g., `<support@wordpress.com>`).    
 ![Spoofed Email Template](https://github.com/benz-le/Portfolio/blob/main/GoPhish%20Phishing%20Campaign%20with%20Linode%20and%20MailHog/images/spoofed%20email%20template.png)
 ### Step 14: Run Campaign 
-7. In **Campaign**: 
-   - For URL, enter the GoPhish URL (e.g., `http://69.164.203.224`).
-   - Choose the spoof Sending Profile and group.
+1. In **Campaign**: 
+   - For **URL**, enter the GoPhish URL (e.g., `http://69.164.203.224`).
+   - Choose the spoof **Sending Profile** and group.
    - Run campaign.
    - The email should appear in the MailHog inbox (e.g., `http://69.164.203.224:8025`).
 ![MailHog Inbox with Email](https://github.com/benz-le/Portfolio/blob/main/GoPhish%20Phishing%20Campaign%20with%20Linode%20and%20MailHog/images/mail%20in%20mailhog.png)
