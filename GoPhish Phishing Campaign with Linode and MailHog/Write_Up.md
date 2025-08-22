@@ -71,7 +71,9 @@ These are my notes for creating a phishing campaign using **GoPhish**, hosted on
 3. Make GoPhish executable:  
    ```bash
    chmod +x gophish
-   ```  
+   ```
+   ![GoPhish Commands]()
+   ![GoPhish Permissions]()	  
 4. Run GoPhish:  
    ```bash
    sudo ./gophish
@@ -90,7 +92,8 @@ These are my notes for creating a phishing campaign using **GoPhish**, hosted on
    ```  
    Example: `https://69.164.203.224:3333`  
 2. Log in with the credentials from the GoPhish output.  
-3. Change the password when prompted.  
+3. Change the password when prompted.
+   ![GoPhish Page]()  
 
 ### Step 6: Add Users & Groups
 1. Go to **Users & Groups** → **New Group**.  
@@ -99,14 +102,19 @@ These are my notes for creating a phishing campaign using **GoPhish**, hosted on
 
 ### Step 7: Create an Email Template
 1. Go to **Email Templates** → **New Template**.  
-2. Copy a real email (e.g., Gmail) → **Show Original** → **Copy to Clipboard**.  
+2. Copy a real email (e.g., Gmail) → **Show Original** → **Copy to Clipboard**.
+![Original Email]()
+![Copy]()  
 3. Import it into GoPhish → Save.  
 4. For **Envelope Sender**, use any test address (spoofing is configured later).  
+![Email Template]()
 
 ### Step 8: Add a Landing Page
-1. Go to **Landing Pages** → **New Page**.  
+1. Go to **Landing Pages** → **New Page**.
+![Login Page]()  
 2. Import a login page (e.g., `login.wordpress.org`).  
 3. Save.  
+![Landing Page]()
 
 ### Step 9: Configure a Sending Profile
 > [!TIP]  
@@ -126,6 +134,11 @@ These are my notes for creating a phishing campaign using **GoPhish**, hosted on
 2. Select your group, template, and sending profile.  
 3. For URL, enter your GoPhish IP (e.g., `http://69.164.203.224`).  
 4. Click **Launch Campaign**.  
+![Campaign]()
+5. Here are the results:
+![Phish Email]()
+![Campaign Dashboard 1]()
+![Campaign Dashboard 2]()
 
 ---
 
@@ -147,27 +160,51 @@ These are my notes for creating a phishing campaign using **GoPhish**, hosted on
    screen -S mailhog
    sudo ./MailHog_linux_amd64
    ```  
-4. Note the MailHog web interface address (default: port `8025`).  
+4. Note the MailHog web interface address (default: port `8025`).
+![MailHog Output]()  
 
 ### Step 12: Access MailHog Inbox
 - Open in browser:  
   ```
   http://<ip-address>:8025
   ```  
+![MailHog Inbox]()
 
 ### Step 13: Configure GoPhish with MailHog
-1. In **Sending Profiles**, set SMTP From (e.g., `support@wordpress.com`).  
-2. Use the MailHog SMTP server:  
+1. Run GoPhish:
+```
+cd ..
+cd gophish/
+sudo ./gophish
+```
+2. Navigate to:  
+   ```
+   https://<ip-address>:<port>
+   ```  
+3. In **Sending Profiles**, set SMTP From (e.g., `benz <support@wordpress.com>`).  
+4. Use the MailHog SMTP server:  
    ```
    <ip-address>:1025
    ```  
-3. Save the profile.  
-4. Re-run the campaign. Emails will now appear in the MailHog inbox.  
-
+5. Save the profile.
+![Spoofed Sending Profile]()
+6. In **Email Templates**, set Envelope Sender (e.g., <support@wordpress.com>`).    
+![Spoofed Email Template]()
+### Step 14: Run Campaign 
+7. In **Campaign**: 
+   - For URL, enter the GoPhish URL (e.g., `http://69.164.203.224`).
+   - Choose the spoof Sending Profile and group.
+   - Run campaign.
+   - The email should appear in the MailHog inbox (e.g., `http://69.164.203.224:8025`).
+![MailHog Inbox with Email]()
+- Here is the spoofed email address:
+![Spoofed Email in MailHog]()
+ 
 ---
 
 ## Clean Up
 - Shut down or delete the Linode VM to avoid charges.  
+![Delete VM]()
 
 ---
 
