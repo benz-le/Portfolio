@@ -192,7 +192,7 @@ sudo ./gophish
    ```  
 5. Save the profile.
 ![Spoofed Sending Profile](https://github.com/benz-le/Portfolio/blob/main/GoPhish%20Phishing%20Campaign%20with%20Linode%20and%20MailHog/images/spoofed%20sending%20profile.png)
-6. In **Email Templates**, set Envelope Sender (e.g., <support@wordpress.com>`).    
+6. In **Email Templates**, set Envelope Sender (e.g., `<support@wordpress.com>`).    
 ![Spoofed Email Template](https://github.com/benz-le/Portfolio/blob/main/GoPhish%20Phishing%20Campaign%20with%20Linode%20and%20MailHog/images/spoofed%20email%20template.png)
 ### Step 14: Run Campaign 
 7. In **Campaign**: 
