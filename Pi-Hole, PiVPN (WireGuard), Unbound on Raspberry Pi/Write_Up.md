@@ -273,3 +273,4 @@ Server/Server Address: dynupdate.no-ip.com
 - The Pi-hole dashboard is accessible from both LAN and VPN.
 - Be mindful of periodic No-IP hostname verification if using their free service.
 - For added security, consider implementing firewall rules, fail2ban, and Ansible (configuration management).
+- To enable HTTPS for Pi-hole user interface, go to this [guide.](https://github.com/benz-le/Portfolio/blob/main/Pi-Hole%2C%20PiVPN%20(WireGuard)%2C%20Unbound%20on%20Raspberry%20Pi/HTTPS_Write_Up.md)
