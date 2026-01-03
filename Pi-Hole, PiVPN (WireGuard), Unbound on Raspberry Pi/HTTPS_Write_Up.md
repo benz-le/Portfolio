@@ -12,7 +12,7 @@ This project documents how I securely enabled **HTTPS for the Pi-hole v6 admin i
 - Let’s Encrypt is **not appropriate** for VPN/LAN-only services
 
 This setup provides:
-- ✅ Green lock (trusted HTTPS)
+- ✅ Trusted HTTPS
 - ✅ No public DNS or port forwarding
 - ✅ Works on LAN and WireGuard
 - ✅ Fully compliant with modern browser requirements
@@ -130,7 +130,9 @@ openssl s_client -connect localhost:443 -servername pihole.benz.lan </dev/null |
 
 ## Step 6 – Trust the CA on Client Devices
 
-Import `ca.crt` into **Trusted Root Certification Authorities**.
+- On Windows, to copy `ca.crt` from Pi-hole machine, run the command in terminal: \
+`scp pi@pihole.benz.lan:/home/pi/pihole-ca/ca.crt <Output-Folder>` 
+- In `certmgr.msc`, import `ca.crt` into **Trusted Root Certification Authorities**.
 
 ---
 
