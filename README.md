@@ -37,7 +37,7 @@ Examined a captured Linux filesystem using **FTK Imager** and **PowerShell** to 
 - Bash history and authentication log analysis
 - Evidence interpretation and investigation documentation
 
-📄 [Read the Insider lab write-up](CyberDefenders%20CTFs/Disk%20Forensics/Insider_Lab.md)
+📄 [Read the Insider lab write-up](CyberDefenders%20CTFs/Disk%20Forensics/Insider_Lab_Write_Up.md)
 
 ---
 
