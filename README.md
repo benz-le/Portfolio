@@ -35,7 +35,7 @@ Investigated an Android extraction using **ALEAPP** to reconstruct a CTF victim'
 - Artifact correlation and evidence interpretation
 - Investigation documentation
 
-📄 [Read the write-up](The%20Crime%20-%20Android%20Forensics/Write_Up.md)
+📄 [Read the write-up](CyberDefenders/Disk%20Forensics/CTFs/Write_Up.md)
 
 ---
 
