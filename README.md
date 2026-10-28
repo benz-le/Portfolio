@@ -21,6 +21,24 @@ I am particularly interested in roles related to:
 
 ## 🔐 Projects
 
+### 🔎 The Crime — Android Forensics (CyberDefenders)
+Investigated an Android extraction using **ALEAPP** to reconstruct a CTF victim's financial activity, communications, location clues, and travel plans.
+
+**Key Activities**
+- Identified a trading application's recorded SHA-256 hash
+- Correlated a repayment message with Android contacts
+- Examined recent activity snapshots and cached boarding pass images
+- Recovered a planned meeting location from Discord conversations
+
+**Focus Areas**
+- Android and endpoint forensics
+- Artifact correlation and evidence interpretation
+- Investigation documentation
+
+📄 [Read the write-up](The%20Crime%20-%20Android%20Forensics/Write_Up.md)
+
+---
+
 ### 🎣 GoPhish Phishing Campaign (Linode + MailHog)
 Designed and executed a controlled **phishing simulation** to understand attacker tradecraft and improve detection strategies.
 
