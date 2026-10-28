@@ -21,6 +21,26 @@ I am particularly interested in roles related to:
 
 ## 🔐 Projects
 
+### 🔍 Insider — Linux Disk Forensics (CyberDefenders)
+Examined a captured Linux filesystem using **FTK Imager** and **PowerShell** to investigate suspected insider activity.
+
+**Key Activities**
+
+- Identified the Linux distribution and a downloaded credential-dumping archive
+- Calculated an Apache log's MD5 hash and assessed the limits of empty logs
+- Reconstructed file paths and working directories from Bash history
+- Examined scripts, image evidence, and account-switching events in authentication logs
+
+**Focus Areas**
+
+- Linux disk forensics
+- Bash history and authentication log analysis
+- Evidence interpretation and investigation documentation
+
+📄 [Read the Insider lab write-up](CyberDefenders%20CTFs/Disk%20Forensics/Insider_Lab.md)
+
+---
+
 ### 🔎 The Crime — Android Forensics (CyberDefenders)
 Investigated an Android extraction using **ALEAPP** to reconstruct a CTF victim's financial activity, communications, location clues, and travel plans.
 
@@ -35,7 +55,7 @@ Investigated an Android extraction using **ALEAPP** to reconstruct a CTF victim'
 - Artifact correlation and evidence interpretation
 - Investigation documentation
 
-📄 [Read the write-up](CyberDefenders%20CTFs/Disk%20Forensics/Write_Up.md)
+📄 [Read the write-up](CyberDefenders%20CTFs/Disk%20Forensics/The_Crime_Lab_Write_Up.md)
 
 ---
 
