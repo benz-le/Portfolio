@@ -21,6 +21,26 @@ I am particularly interested in roles related to:
 
 ## 🔐 Projects
 
+### 🔍 AfricanFalls — Windows Disk Forensics (CyberDefenders)
+Investigated Windows disk evidence using **FTK Imager**, **Autopsy**, **PECmd**, and **ShellBags Explorer** to reconstruct a suspect's activity.
+
+**Key Activities**
+
+- Correlated browser history, FileZilla configuration, and PowerShell commands
+- Examined Recycle Bin metadata and distinguished installer execution from browser activity
+- Combined photo metadata and ShellBags to investigate location and source folders
+- Documented account hash recovery and password lookup results
+
+**Focus Areas**
+
+- Windows endpoint forensics
+- Artifact correlation and timestamp interpretation
+- Evidence-based investigation reporting
+
+📄 [Read the AfricanFalls lab write-up](CyberDefenders%20CTFs/Disk%20Forensics/AfricanFalls_Lab_Write_Up.md)
+
+---
+
 ### 🔍 Insider — Linux Disk Forensics (CyberDefenders)
 Examined a captured Linux filesystem using **FTK Imager** and **PowerShell** to investigate suspected insider activity.
 
